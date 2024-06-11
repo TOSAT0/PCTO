@@ -1,4 +1,4 @@
- FUNZIONALITÀ:
+ #FUNZIONALITÀ:
   - cancella cronologia esegui e cronologia powershell
   - carica un file con l'indirizzo ip del dispositivo
   - carica un file con alcune informazioni sul dispositivo
